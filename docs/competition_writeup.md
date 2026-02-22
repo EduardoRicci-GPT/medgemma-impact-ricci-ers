@@ -125,3 +125,18 @@ Trust requires:
 - validation
 
 RICCI ERS demonstrates a practical infrastructure model for achieving these properties.
+
+## Runnable Governed Demonstration
+
+A fully executable Kaggle notebook demonstrates the complete operational flow:
+
+timeline → LLM reasoning → structured medical events → governance validation → exportable artifacts
+
+Generated artifacts (committed in `/exports`):
+- ricci_ers_llm_demo_20260222_204408.md
+- ricci_ers_llm_demo_20260222_204408.json
+
+If the LLM output fails JSON parsing, the governance layer activates a deterministic fallback,
+ensuring mandatory clinical documentation events are always generated.
+
+This guarantees safety, auditability, and structural reliability in emergency-response scenarios.
