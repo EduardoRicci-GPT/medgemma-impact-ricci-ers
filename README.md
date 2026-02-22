@@ -1,44 +1,111 @@
-# Medgemma Impact Ricci ERS
+MedGemma Impact — RICCI ERS
 
-## Overview
+Governed Clinical Event Reasoning System
 
-Medgemma Impact Ricci ERS is a project designed to provide comprehensive insights and analyses related to the impact of various factors within the Ricci framework. This project aims to leverage data science methodologies and advanced analytics to deliver meaningful interpretations and predictive models.
+Overview
 
-## Features
-- **Data Analysis**: In-depth analysis of data sets relevant to the Ricci impact.
-- **Visualizations**: Interactive charts and graphs to represent data trends and insights.
-- **Predictive Modeling**: Implementation of machine learning models to predict future impacts based on historical data.
+RICCI ERS is a governance-driven clinical reasoning system designed for emergency-response environments.
 
-## Installation
+Instead of focusing on free-form medical text generation, the system enforces structured, auditable clinical event documentation.
 
-To get started with the Medgemma Impact Ricci ERS project, clone this repository and install the required dependencies:
+It transforms:
 
-```bash
-git clone https://github.com/yourusername/medgemma-impact-ricci-ers.git
-cd medgemma-impact-ricci-ers
-pip install -r requirements.txt
-```
+Operational Timeline
+→ LLM Clinical Reasoning
+→ Structured Medical Events (JSON)
+→ Governance Validation
+→ Audit-Ready Export
 
-## Usage
+The objective is reliability, safety, and structural integrity in AI-assisted emergency documentation.
 
-After installation, you can run the main application with the following command:
+Problem Context
 
-```bash
-python main.py
-```
+In emergency systems (EMS / SAMU environments), AI must:
 
-## Contribution
+Produce structured outputs
 
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to this project.
+Avoid omission of mandatory documentation
 
-## License
+Remain auditable
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Degrade safely when model output fails
 
-## Contact
+The primary operational risk is not hallucination — it is omission.
 
-For any inquiries or feedback, please contact Eduardo Ricci at [email@example.com](mailto:email@example.com).
+RICCI ERS addresses this through a deterministic governance layer.
 
-## Acknowledgments
+System Architecture
 
-- Thanks to all contributors and collaborators who have participated in this project.
+Timeline ingestion
+
+LLM reasoning (MedGemma-ready interface)
+
+JSON structure validation
+
+Mandatory event classification (Hard vs Soft)
+
+Deterministic fallback activation (if needed)
+
+Export of structured artifacts (.json + .md)
+
+This ensures minimum clinical safety compliance even under parsing or generation failure.
+
+Safety & Governance Layer
+
+The system enforces:
+
+JSON parsing validation
+
+Hard-required events (must exist)
+
+Soft-required events (recommended but non-blocking)
+
+Deterministic fallback generation
+
+Structured export for auditing
+
+If the LLM output cannot be parsed into valid JSON, a fallback mechanism guarantees mandatory clinical events are generated.
+
+This design prioritizes operational safety over generative flexibility.
+
+Runnable Demonstration
+
+A fully executable Kaggle notebook demonstrates the complete pipeline:
+
+Timeline → LLM → Governance → Export
+
+Generated artifacts are committed in /exports:
+
+ricci_ers_llm_demo_*.md
+
+ricci_ers_llm_demo_*.json
+
+The notebook runs end-to-end and exports audit-ready outputs.
+
+Repository Structure
+docs/         → Competition write-up  
+notebooks/    → Kaggle submission notebook  
+src/          → Core governance and reasoning logic  
+exports/      → Generated demonstration artifacts  
+Why This Approach
+
+Emergency AI systems must be:
+
+Deterministic under failure
+
+Structurally validated
+
+Auditable
+
+Governance-aware
+
+RICCI ERS proposes a pattern for integrating LLMs into clinical environments where reliability is mandatory.
+
+License
+
+MIT License
+
+Author
+
+Eduardo Ricci
+Governed Clinical Event Reasoning System — RICCI ERS
