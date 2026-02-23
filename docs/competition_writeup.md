@@ -124,6 +124,12 @@ Trust requires:
 - traceability
 - validation
 
+## Video Demonstration
+
+A complete execution of the system (timeline → LLM → governance → export) can be viewed here:
+
+https://youtu.be/gTcpKdaUO_4
+
 RICCI ERS demonstrates a practical infrastructure model for achieving these properties.
 
 ## Runnable Governed Demonstration
